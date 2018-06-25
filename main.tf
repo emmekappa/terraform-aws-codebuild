@@ -199,6 +199,6 @@ resource "aws_codebuild_project" "default" {
 }
 
 resource "aws_codebuild_webhook" "default" {
-  project_name = "${module.label.id}"
+  project_name = "${aws_codebuild_project.default.name}"
   depends_on   = ["aws_codebuild_project.default"]
 }
